@@ -16,6 +16,9 @@ console.log(typeof(c))
 
 let required = true
 console.log(typeof(required))
+/*Reverse operator - only for boolean type*/
+console.log(!required)
 
 var c = a + b
 console.log(c)
+
