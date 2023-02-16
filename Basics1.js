@@ -19,4 +19,3 @@ console.log(typeof(required))
 
 var c = a + b
 console.log(c)
-
