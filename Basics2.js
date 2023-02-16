@@ -17,11 +17,19 @@ console.log("Condition not satisfied")
 /*WHILE LOOP*/
 /*While loop must contain code that manipulates variable given in the condition*/
 /*If condition matches / is true; block of code gets executed n-times, until condition becomes false*/
+/*We use while loop if we want to repeat loop based upon some condition / evaluation that if it becomes true or false we use*/
 let i = 0
 while (i>10)
 {
 i++ //same as i = i + 1
 console.log(i)
+}
+
+let required = true
+while (required)
+{
+console.log(required)
+required = false
 }
 
 /*DO WHILE LOOP*/
@@ -40,3 +48,4 @@ for (let k = 0; k <= 10; k++)
 {
 console.log(k)
 }
+
