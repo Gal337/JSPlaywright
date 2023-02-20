@@ -26,7 +26,7 @@ console.log(i)
 }
 
 let required = true
-while (required)
+while (required) // while (condition)
 {
 console.log(required)
 required = false
@@ -49,3 +49,15 @@ for (let k = 0; k <= 10; k++)
 console.log(k)
 }
 
+//Get the numbers common to value of multiple of 2 and / or 5
+let n = 0
+for (let k = 1; k <= 100; k++)
+{
+    if (k%2 == 0 && k%5 == 0)
+    {
+    n++
+    console.log(k)
+    if (n == 3)
+    break
+    }
+}
