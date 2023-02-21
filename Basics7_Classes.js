@@ -26,17 +26,17 @@ module.exports = class Person
   }
 
 
-
+  
 }
 
 //Accessing the property of any class, new object of the class needs to be created
 //It needs to be created outside of class
 //Example:
-let person = new Person("Chris", "Jones")
-let personConstructor = new Person("Tim", "Doe")
-console.log(person.age)
-console.log(person.location)
-console.log(person.fullName())
-console.log(personConstructor.fullName())
+//let person = new Person("Chris","Jones")
+//let personConstructor = new Person("Tim","Doe")
+//console.log(person.age)
+//console.log(person.location)
+//console.log(person.fullName())
+//console.log(personConstructor.fullName())
 
 
