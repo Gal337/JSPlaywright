@@ -45,7 +45,7 @@ module.exports = defineConfig({
   },
 
   /* Configure projects for major browsers */
-  projects: [
+  /* projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
@@ -59,7 +59,7 @@ module.exports = defineConfig({
     {
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
-    },
+    }, */
 
     /* Test against mobile viewports. */
     // {
@@ -80,7 +80,7 @@ module.exports = defineConfig({
     //   name: 'Google Chrome',
     //   use: { channel: 'chrome' },
     // },
-  ],
+  /* ], */
 
   /* Folder for test artifacts such as screenshots, videos, traces, etc. */
   // outputDir: 'test-results/',
