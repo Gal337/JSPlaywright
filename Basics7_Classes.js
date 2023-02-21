@@ -2,7 +2,8 @@
 /*Basics about classes*/
 
 //Declaring class; keyword class, name of the class
-class Person
+//Exporting class
+module.exports = class Person
 {
   age = 25
   //location Canada, get method is also treated as property

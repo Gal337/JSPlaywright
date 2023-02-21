@@ -1,6 +1,10 @@
 /*STRINGS*/
 /*Basics about strings*/
 
+//Adding access to class from different file
+const Person = require('./Basics7_Classes')
+
+
 //Getting length of string
 let day = 'tuesday '
 console.log(day.length)
@@ -34,4 +38,8 @@ while (value !== -1)
 }
 console.log(count)
 
+
+//Calling the class from file Basics7_Classes
+let person = new Person("Chris","Edward")
+console.log(person.fullName())
 
