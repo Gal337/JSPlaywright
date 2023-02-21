@@ -70,7 +70,14 @@ console.log(newFilterEvenScores)
 
 //Map function
 /*Mapping is used to change existing value to new value*/
-//Multiply new elements with 3
+//Create new array with even number of scores, multiply each value with 3 and sum them
 let mappedArray = newFilterEvenScores.map(score => score*3)
 console.log(mappedArray)
+let totalValue = mappedArray.reduce((sum, value) => sum + value, 0)
+console.log(totalValue)
+
+//Chaining the array functions
+var scores1 = [12,13,14,16]
+let sumValue = scores1.filter(score => score % 2 == 0).map(score => score * 3).reduce((sum, value) => sum + value, 0)
+console.log(sumValue)
 
