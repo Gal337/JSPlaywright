@@ -81,3 +81,19 @@ var scores1 = [12,13,14,16]
 let sumValue = scores1.filter(score => score % 2 == 0).map(score => score * 3).reduce((sum, value) => sum + value, 0)
 console.log(sumValue)
 
+
+//String array and sorting it in alphabetical order
+/*Sort method only sorts strings, not numbers*/
+let fruits = ["banana", "mango", "strawberry", "apple"]
+fruits.sort()
+console.log(fruits)
+console.log(fruits.reverse())
+
+//Recursive sorting function that compares each element in array and pushes the smallest one to the beginning
+var scores1 = [12,003,19,16,14]
+//console.log(scores1.sort())
+//scores1.sort(function(a,b)){
+//return a-b
+//}
+//scores1.sort((a,b) => a - b)
+console.log(scores1.sort((a,b) => a-b))
