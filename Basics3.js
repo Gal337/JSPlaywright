@@ -44,11 +44,11 @@ for(let i = 0; i < marks.length; i++)
 }
 console.log(sum)
 
-//Reduce method performs operation on all elements of array
+//Reduce function performs operation on all elements of array
 // Create new array with even numbers of scores array
 /*Value of sum should be entered last and the real logic should be before the sum value*/
 /*Value of sum = 0*/
-marks.reduce((sum, mark) => sum + mark, 0)
+let total = marks.reduce((sum, mark) => sum + mark, 0)
 console.log(total)
 var scores = [12,13,14,16]
 var evenScores = []
@@ -62,8 +62,15 @@ for (let i = 0; i < scores.length; i++)
 console.log(evenScores)
 
 //Example 2
-//Use Filter method if u only want to filter the values inside array
+//Use Filter function if u only want to filter the values inside array
 /*Filter method iterates through all elements inside array with specified condition (score % 2 == 0)
 and pushes the values to new array*/
 let newFilterEvenScores = scores.filter(score => score % 2 == 0)
 console.log(newFilterEvenScores)
+
+//Map function
+/*Mapping is used to change existing value to new value*/
+//Multiply new elements with 3
+let mappedArray = newFilterEvenScores.map(score => score*3)
+console.log(mappedArray)
+
