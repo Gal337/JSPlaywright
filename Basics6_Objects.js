@@ -1,12 +1,20 @@
 /*OBJECTS*/
-/*object is collection of properties, we define properties by key : value*/
+/*Basics about objects*/
+
+/*object is collection of properties and / or methods, we define properties by key : value*/
 //declaring object
 let person = {
   firstName: 'Tim',
-  lastName: 'Doe'
+  lastName: 'Doe',
+  age: 24,
+  fullName: function()
+  {
+    console.log(this.firstName + this.lastName)
+  }
 }
 
 //Different ways of accessing properties inside object
+console.log(person.fullName())
 console.log(person.lastName)
 console.log(person['lastName'])
 
@@ -22,6 +30,13 @@ console.log(person)
 delete person.gender
 console.log(person)
 
-//Checking if property exists in the object and iterating through all the properties inside an object
+//Checking if property exists in the object
+console.log('gender' in person)
+
+//Printing all values inside javascript object (key represents properties inside object; firstName, lastName)
+for (let key in person)
+{
+  console.log(person[key])
+}
 
 

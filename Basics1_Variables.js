@@ -1,3 +1,6 @@
+/*VARIABLE*/
+/*Basics about variables and printing them to console*/
+
 /*Printing to console*/
 console.log("Hello, this are the JS basics")
 

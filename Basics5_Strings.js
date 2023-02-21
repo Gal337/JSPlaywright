@@ -1,4 +1,5 @@
-/*Strings and methods in Javascript*/
+/*STRINGS*/
+/*Basics about strings*/
 
 //Getting length of string
 let day = 'tuesday '

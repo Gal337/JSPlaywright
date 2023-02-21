@@ -1,3 +1,6 @@
+/*LOOPS*/
+/*Basics about loops (if, while, do while, for)*/
+
 /*Declaring constant variable with the name flag and value true*/
 const flag = true
 

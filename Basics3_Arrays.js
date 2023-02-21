@@ -1,3 +1,6 @@
+/*ARRAYS*/
+/*Basics about arrays*/
+
 //Assings array with single and multiple values
 var marks = Array(6)
 var marks = new Array(20,40,25,12,37,100)

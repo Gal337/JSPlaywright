@@ -1,4 +1,6 @@
-/*Functions*/
+/*FUNCTIONS*/
+/*Basics about functions*/
+
 /*Block of code that can be executed together by wrapping it in brackets*/
 /*Declaring the function: keyword function, name of the function and parameters */
 //KEYWORDS: var, let, const and scope differences
