@@ -1,7 +1,7 @@
 /*Functions*/
 /*Block of code that can be executed together by wrapping it in brackets*/
 /*Declaring the function: keyword function, name of the function and parameters */
-//KEYWORDS: var, let, const
+//KEYWORDS: var, let, const and scope differences
 /*var - global level / functional - can only be used inside function*/
 /*let - global level / block level {} - only used inside a block*/
 /*const - same as let but can not be reinitialized*/
