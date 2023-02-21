@@ -8,7 +8,7 @@ test('Browser Context Playwright test',async ({browser})=>
   const context = await browser.newContext();
   //Creating actual page to automate
   const page = await context.newPage();
-  //Opening specific URL
+  //Saving URL to variable and opening the URL
   const link = await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
 
 });
@@ -18,7 +18,7 @@ test('Browser Context Playwright test',async ({browser})=>
 test('First Playwright test',async ({page})=>
 {
   //Opening specific URL
-  const link = await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
+  await page.goto("https://google.com/")
 
 });
 
