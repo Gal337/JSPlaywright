@@ -17,7 +17,7 @@ test('Browser Context Playwright test',async ({browser})=>
 //If we use page, we don't need to create context and page instances
 //Page is used when we don't need to inject cookies
 /*using test.only ('First Playwright test',async ({page})=> means ONLY this test case will be executed*/
-test.only('First Playwright test',async ({page})=>
+test('First Playwright test',async ({page})=>
 {
   //Opening specific URL
   await page.goto("https://google.com/")
