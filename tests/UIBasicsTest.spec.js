@@ -13,7 +13,13 @@ test('Browser Context Playwright test',async ({browser})=>
   const link = await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
   console.log(await page.title());
   //Method that helps us locate any element on the page (css, xpath)
-  page.locator()
+  //and enters the username in the username field
+  await page.locator('#username').type("playwright");
+  await page.locator("[type='password']").type("learning");
+  await page.locator("#signInBtn").click();
+  await page.locator()
+  [style*='none']
+  [style*='block']
 });
 
 //If we use page, we don't need to create context and page instances
