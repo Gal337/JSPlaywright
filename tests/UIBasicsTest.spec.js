@@ -11,7 +11,9 @@ test('Browser Context Playwright test',async ({browser})=>
   const page = await context.newPage();
   //Saving URL to variable and opening the URL
   const link = await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
-
+  console.log(await page.title());
+  //Method that helps us locate any element on the page (css, xpath)
+  page.locator()
 });
 
 //If we use page, we don't need to create context and page instances
