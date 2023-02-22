@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 
 //Excersise #1 - Automated Login
-test.only('Automated login test',async ({page})=>
+test('Automated login test',async ({page})=>
 {
   const link = "https://rahulshettyacademy.com/client/";
   const email = page.locator("#userEmail");

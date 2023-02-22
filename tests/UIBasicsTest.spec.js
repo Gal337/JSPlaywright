@@ -3,7 +3,7 @@ const {test, expect} = require('@playwright/test');
 
 //async needs to be added before function so the steps will be executed in order
 //instead of function, we can also write just ()=> ; instead of browser we can also use {page} if we don't need anything else
-test('Browser Context Playwright test',async ({browser})=>
+test.only('Browser Context Playwright test',async ({browser})=>
 {
   //Creating new instance
   const context = await browser.newContext();
@@ -27,10 +27,17 @@ test('Browser Context Playwright test',async ({browser})=>
   //Erasing the username we already entered previously with fill method
   await userName.fill("");
   await userName.fill("rahulshettyacademy");
-  await signIn.click();
+  //waitForURL is used so website loads completely
+  await Promise.all(
+    [
+      await signIn.click(),
+      await page.waitForURL("https://rahulshettyacademy.com/angularpractice/shop"),
+    ]
+  );
+  
   //Prints the value of first and 2nd element to console
-  console.log(await cardTitles.first().textContent());
-  console.log(await cardTitles.nth(1).textContent());
+  //console.log(await cardTitles.first().textContent());
+  //console.log(await cardTitles.nth(1).textContent());
   //Prints all titles of elements
   const allTitles = await cardTitles.allTextContents();
   console.log(allTitles);
