@@ -3,7 +3,7 @@ const {test, expect} = require('@playwright/test');
 
 //async needs to be added before function so the steps will be executed in order
 //instead of function, we can also write just ()=> ; instead of browser we can also use {page} if we don't need anything else
-test('Browser Context Playwright test',async ({browser})=>
+test.only('Browser Context Playwright test',async ({browser})=>
 {
   //Creating new instance
   const context = await browser.newContext();
@@ -17,9 +17,10 @@ test('Browser Context Playwright test',async ({browser})=>
   await page.locator('#username').type("playwright");
   await page.locator("[type='password']").type("learning");
   await page.locator("#signInBtn").click();
-  await page.locator()
-  [style*='none']
-  [style*='block']
+  //Waits until locator is visible on the page
+  console.log(await page.locator("[style*='block']").textContent());
+
+  
 });
 
 //If we use page, we don't need to create context and page instances
