@@ -12,11 +12,10 @@ test.only('Automated login test',async ({page})=>
   await email.fill("destined19876@gmail.com");
   await password.type("Abc!2345");
   await loginBtn.click();
+  //Waiting for the website to load
   await page.waitForLoadState('networkidle');
-
+  //Printing titles of products to terminal
   const titles = await page.locator(".card-body b").allTextContents();
 
   console.log(titles);
-
-
 });

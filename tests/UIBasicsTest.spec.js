@@ -48,4 +48,3 @@ test('First Playwright test',async ({page})=>
   //Doing the assertion to make sure we are on correct page
   await expect(page).toHaveTitle("Google");
 });
-
