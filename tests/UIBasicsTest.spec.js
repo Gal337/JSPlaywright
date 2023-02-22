@@ -3,24 +3,37 @@ const {test, expect} = require('@playwright/test');
 
 //async needs to be added before function so the steps will be executed in order
 //instead of function, we can also write just ()=> ; instead of browser we can also use {page} if we don't need anything else
-test.only('Browser Context Playwright test',async ({browser})=>
+test('Browser Context Playwright test',async ({browser})=>
 {
   //Creating new instance
   const context = await browser.newContext();
   //Creating actual page to automate
   const page = await context.newPage();
+  //Storing locators to variables
+  const userName = page.locator('#username');
+  const signIn = page.locator("#signInBtn");
+  const cardTitles = page.locator(".card-body a");
   //Saving URL to variable and opening the URL
   const link = await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
   console.log(await page.title());
-  //Method that helps us locate any element on the page (css, xpath)
-  //and enters the username in the username field
-  await page.locator('#username').type("playwright");
+  //Method that helps us locate any element on the page (css, xpath),
+  //enters the username in the username field and then clicks sign in button
+  await userName.type("playwright");
   await page.locator("[type='password']").type("learning");
   await page.locator("#signInBtn").click();
   //Waits until locator is visible on the page
   console.log(await page.locator("[style*='block']").textContent());
-
-  
+  await expect(page.locator("[style*='block']")).toContainText('Incorrect');
+  //Erasing the username we already entered previously with fill method
+  await userName.fill("");
+  await userName.fill("rahulshettyacademy");
+  await signIn.click();
+  //Prints the value of first and 2nd element to console
+  console.log(await cardTitles.first().textContent());
+  console.log(await cardTitles.nth(1).textContent());
+  //Prints all titles of elements
+  const allTitles = await cardTitles.allTextContents();
+  console.log(allTitles);
 });
 
 //If we use page, we don't need to create context and page instances
@@ -35,5 +48,4 @@ test('First Playwright test',async ({page})=>
   //Doing the assertion to make sure we are on correct page
   await expect(page).toHaveTitle("Google");
 });
-
 

@@ -24,8 +24,11 @@ css -> text=''
 /*EXECUTING TESTS*/
 /*To execute tests we have to type in terminal next command: npx playwright test*/
 
-/*To run specific test we can append .only to the test we want to run
+/*If multiple tests are written inside 1 file, we can append .only to run that test only;
 Example: test.only('Browser Context Playwright test',async ({browser})=> */
+/*If we have multiple files with tests and we want to run specific file (not whole Tests folder),
+then we need to specify the file with command in terminal: npx playwright test tests/*name of the file/test;
+Example: npx playwright test tests/AutomatedLogin.spec.js*/
 
 
 /*PLAYWRIGHT CONFIG*/
