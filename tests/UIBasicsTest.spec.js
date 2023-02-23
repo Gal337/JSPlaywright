@@ -11,6 +11,7 @@ test.only('Browser Context Playwright test',async ({browser})=>
   const page = await context.newPage();
   //Storing locators to variables
   const userName = page.locator('#username');
+  const password = page.locator("[type='password']");
   const signIn = page.locator("#signInBtn");
   const cardTitles = page.locator(".card-body a");
   //Saving URL to variable and opening the URL
@@ -19,7 +20,7 @@ test.only('Browser Context Playwright test',async ({browser})=>
   //Method that helps us locate any element on the page (css, xpath),
   //enters the username in the username field and then clicks sign in button
   await userName.type("playwright");
-  await page.locator("[type='password']").type("learning");
+  await password.type("learning");
   await page.locator("#signInBtn").click();
   //Waits until locator is visible on the page
   console.log(await page.locator("[style*='block']").textContent());
