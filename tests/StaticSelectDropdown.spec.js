@@ -8,5 +8,4 @@ test('Static dropdown test',async ({page})=>
   const password = page.locator("[type='password']");
   const signIn = page.locator("#signInBtn");
 
-  
 });
