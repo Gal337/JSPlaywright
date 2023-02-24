@@ -23,6 +23,7 @@ test('UI Controls test',async ({page})=>
   await page.locator("#terms").click();
   await expect(page.locator("#terms")).toBeChecked();
   //To uncheck the select box and check if it is unchecked
+  //If action is performed inside the brackets; await must also be inside brackets
   await page.locator("#terms").uncheck();
   expect(await page.locator("#terms").isChecked()).toBeFalsy();
 
