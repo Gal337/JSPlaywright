@@ -39,8 +39,8 @@ module.exports = defineConfig({
     headless: false,
     /*Makes screenshot for every step*/
     screenshot : 'on',
-    /*Collect what happens on each step execution*/
-    trace : 'on',
+    /*Creates a trace log on test failure*/
+    trace : 'retain-on-failure',
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
