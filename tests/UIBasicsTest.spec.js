@@ -3,7 +3,7 @@ const {test, expect} = require('@playwright/test');
 
 //async needs to be added before function so the steps will be executed in order
 //instead of function, we can also write just ()=> ; instead of browser we can also use {page} if we don't need anything else
-test.only('Browser Context Playwright test',async ({browser})=>
+test('Browser Context Playwright test',async ({browser})=>
 {
   //Creating new instance
   const context = await browser.newContext();

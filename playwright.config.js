@@ -35,7 +35,12 @@ module.exports = defineConfig({
   use: {
     /*Declare which browser to use*/
     browserName: 'chromium',
+    /*Hide or show browser*/
     headless: false,
+    /*Makes screenshot for every step*/
+    screenshot : 'on',
+    /*Collect what happens on each step execution*/
+    trace : 'on',
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */

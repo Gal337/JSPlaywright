@@ -34,6 +34,10 @@ Example: npx playwright test tests/AutomatedLogin.spec.js*/
 /*To enter debug mode add --debug at the end of command in terminal;
 Example: npx playwright test tests/UIBasicsTest.spec.js ==debug*/
 
+/*RECORDING THE TEST*/
+/*To record the test we can do it with codegen + URL;
+Example: npx playwright codegen https://www.google.com */
+
 
 /*PLAYWRIGHT CONFIG*/
 /*Inside the file playwright.config.js we can configure how Playwright acts*/
