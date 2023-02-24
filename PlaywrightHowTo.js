@@ -30,6 +30,10 @@ Example: test.only('Browser Context Playwright test',async ({browser})=> */
 then we need to specify the file with command in terminal: npx playwright test tests/*name of the file/test;
 Example: npx playwright test tests/AutomatedLogin.spec.js*/
 
+/*DEBUGGING TESTS*/
+/*To enter debug mode add --debug at the end of command in terminal;
+Example: npx playwright test tests/UIBasicsTest.spec.js ==debug*/
+
 
 /*PLAYWRIGHT CONFIG*/
 /*Inside the file playwright.config.js we can configure how Playwright acts*/
