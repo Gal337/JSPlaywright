@@ -42,6 +42,7 @@ test('Dynamic product search test', async ({page}) =>
   if (products.nth(i).locator("b").textContent() === productName)
   {
     await products.nth(i).locator("text=Add to cart").click();
+    break;
   }
   }
 });
