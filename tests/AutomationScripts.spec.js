@@ -15,9 +15,55 @@ test('Automated login test',async ({page})=>
 });
 
 //Test that dynamically goes through a list of products and adds them to cart
-test.only('Dynamic product search test', async ({page}) =>
+test('Dynamic product search test', async ({page}) =>
 {
   //productName variable is being used because we want specific item to be returned
+  const productName = 'iphone 13 pro';
+  const link = "https://rahulshettyacademy.com/client/";
+  const email = page.locator("#userEmail");
+  const password = page.locator("#userPassword");
+  const loginBtn = page.locator("[value='Login']");
+  const products = page.locator(".card-body");
+
+  await page.goto(link);
+  await email.fill("4testing@gmail.com");
+  await password.type("Abc!2345");
+  await loginBtn.click();
+  //Waiting for the website to load
+  await page.waitForLoadState('networkidle');
+  //Printing titles of products to terminal
+  const titles = await page.locator(".card-body b").allTextContents();
+  //Returns titles of products in terminal
+  console.log(titles);
+  //Counts variable returns us the number of items with chosen selector
+  const count = await products.count();
+  for(let i = 0; i < count; i++)
+  {
+  if (await products.nth(i).locator("b").textContent() === productName)
+  {
+    await products.nth(i).locator("text=Add to cart").click();
+    break;
+  }
+  }
+  //Clicking on cart
+  await page.locator("[routerlink*='cart']").click();
+  //.waitFor method waits until element is loaded on the page
+  await page.locator("div li").first().waitFor()
+  //Finding element based on tag + text (h3:has-text(variable or "enter text here"))
+  //.isVisible method returns boolean value after checking if the page is loaded (.waitFor)
+  const bool = page.locator("h3:has-text(productName)").isVisible();
+  //Adding assertion to check if we have the selected item in cart
+  expect(bool).toBeTruthy();
+
+
+  await page.pause();
+});
+
+
+
+//Test for handling auto suggestive dropdown options
+test.only('Auto suggestive dropdown options test', async ({page}) =>
+{
   const productName = 'iphone 13 pro';
   const link = "https://rahulshettyacademy.com/client/";
   const email = page.locator("#userEmail");
@@ -45,5 +91,39 @@ test.only('Dynamic product search test', async ({page}) =>
     break;
   }
   }
+  //Clicking on cart
+  await page.locator("[routerlink*='cart']").click();
+  //.waitFor method waits until element is loaded on the page
+  await page.locator("div li").first().waitFor()
+  //Finding element based on tag + text (h3:has-text(variable or "enter text here"))
+  //.isVisible method returns boolean value after checking if the page is loaded (.waitFor)
+  const bool = page.locator("h3:has-text(productName)").isVisible();
+  //Adding assertion to check if we have the selected item in cart
+  expect(bool).toBeTruthy();
+  //Locating the checkout button based on text; only use text locator for static elements
+  await page.locator("text=Checkout").click();
+  //Adding delay to type method so auto suggestive dropdown shows multiple options each time
+  await page.locator("[placeholder*='Country']").type("can", {delay:100});
+  //Waiting for the dropdown menu to appear
+  const dropdown = page.locator(".ta-results");
+  await dropdown.waitFor();
+  //Counting options from dropdown menu and saving them to variable
+  const optionsCount = await dropdown.locator("button").count();
+  //Iterating to desired option from dropdown menu
+  for (let i = 0; i < optionsCount; i++)
+  {
+    //Saving options to variable
+    const text = await dropdown.locator("button").nth(i).textContent();
+    //Checking if variable matches desired option / text; IMPORTANT: check for any white spaces
+    //In this example white space is also included
+    if (text === " Canada")
+    {
+      //Clicking on desired option
+      await dropdown.locator("button").nth(i).click();
+      break;
+    }
+  }
+
+
   await page.pause();
 });
