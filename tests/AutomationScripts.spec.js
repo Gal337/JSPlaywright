@@ -63,7 +63,7 @@ test('Dynamic product search test', async ({page}) =>
 
 //Test for handling auto suggestive dropdown options
 //(Complete E2E flow of placing the order and grabbing the order id)
-test.only('Auto suggestive dropdown options & E2E flow test', async ({page}) =>
+test('Auto suggestive dropdown options & E2E flow test', async ({page}) =>
 {
   const email = "4testing@gmail.com";
   const productName = 'iphone 13 pro';
