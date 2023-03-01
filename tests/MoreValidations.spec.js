@@ -7,7 +7,6 @@ test("Text visibility validation test", async({page}) =>
   const link = "https://rahulshettyacademy.com/AutomationPractice/";
   const link2 = "https://www.google.com";
 
-
   await page.goto(link);
   //EXAMPLE FOR MOVING BACK AND FORTH
   /* await page.goto(link2);
@@ -29,7 +28,6 @@ test("Java popup / dialog validation test", async({page}) =>
 {
   const link = "https://rahulshettyacademy.com/AutomationPractice/";
 
-
   await page.goto(link);
   await expect(page.locator("#displayed-text")).toBeVisible();
   await page.locator("#hide-textbox").click();
@@ -49,7 +47,6 @@ test("Mouse hover validation test", async({page}) =>
 {
   const link = "https://rahulshettyacademy.com/AutomationPractice/";
 
-
   await page.goto(link);
   //.hover() method hovers mouse over menu element
   await page.locator("#mousehover").hover();
@@ -59,13 +56,22 @@ test("Mouse hover validation test", async({page}) =>
 
 //Test to handle and automate frames on webpage
 //Tag name for frame is iframe or frameset
-test("Frame handling test", async({page}) =>
+test.only("Frame handling test", async({page}) =>
 {
   const link = "https://rahulshettyacademy.com/AutomationPractice/";
 
-
   await page.goto(link);
-  
+  //Switching to frame and then acting upon elements inside the frame
+  //Switching to frame gives us new object so we need to store it to variable
+  const framesPage = page.frameLocator("#courses-iframe");
+  //To access elements inside the frame we need to use the variable
+  //Adding :visible, Playwright will focus only on visible locator
+  await framesPage.locator("li a[href*='lifetime-access']:visible").click();
+  //Grabbing the title text from page we navigated to
+  const textCheck = await framesPage.locator(".text h2").textContent();
+  //Splitting the string based on spaces creates array; retrieving the first element from array
+  console.log(textCheck.split(" ")[1]);
+
 
 });
 
