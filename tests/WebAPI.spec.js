@@ -1,9 +1,26 @@
 const {test, expect, request} = require('@playwright/test')
 
-//This block of code gets executed only once before all other tests
-test.beforeAll(  () =>
-{
+//Creating variable with login payload for API endpoint as Java object {(property:"value")}
+const loginPayload = {userEmail:"4testing@gmail.com",userPassword:"Abc!2345"};
 
+//This block of code gets executed only once before all other tests
+test.beforeAll( async() =>
+{
+  //New API context needs to be created, so we can call the API
+  const apiContext = await request.newContext();
+  //Saving the API response to variable called loginResponse
+  //Calling the API and telling it POST method is being used
+  //Inside () we specify the URL, data we are sending {data:loginPayload},
+  const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login", 
+  {
+    data:loginPayload
+  })
+  //Making assertion to check the call to API did not fail; we should recieve a code 2** (200 - OK)
+  expect(loginResponse.ok()).toBeTruthy();
+  //Getting the JSON response body and saving it to variable
+  const loginResponseJson = loginResponse.json();
+  //Parsing JSON response body and extracting token from it
+  const token = loginResponseJson.token;
 
 
 });
