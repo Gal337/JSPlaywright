@@ -1,4 +1,4 @@
-const {test, expect} = require('@playwright/test')
+const {test, expect, request} = require('@playwright/test')
 
 //This block of code gets executed only once before all other tests
 test.beforeAll(  () =>

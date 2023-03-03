@@ -20,6 +20,13 @@ If locator needs to be written based on Text:
 css -> text=''
  */
 
+/*BELOW COMMAND MUST BE INCLUDED BEFORE WRITING TESTS*/
+/*const {test, expect, request} = require('@playwright/test')*/
+/*
+test = for executing tests that we write inside file
+expect = assertions in tests are identified and resolved correctly
+request = used to access API endpoint and for Web API testing
+*/
 
 /*EXECUTING TESTS*/
 /*To execute tests we have to type in terminal next command: npx playwright test*/
