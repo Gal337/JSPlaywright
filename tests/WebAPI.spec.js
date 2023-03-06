@@ -1,7 +1,10 @@
-const {test, expect, request} = require('@playwright/test')
+const {test, expect, request} = require('@playwright/test');
 
 //Creating variable with login payload for API endpoint as Java object {(property:"value")}
 const loginPayload = {userEmail:"4testing@gmail.com",userPassword:"Abc!2345"};
+
+//Making token variable accessable to every test
+let token;
 
 //This block of code gets executed only once before all other tests
 test.beforeAll( async() =>
@@ -18,10 +21,10 @@ test.beforeAll( async() =>
   //Making assertion to check the call to API did not fail; we should recieve a code 2** (200 - OK)
   expect(loginResponse.ok()).toBeTruthy();
   //Getting the JSON response body and saving it to variable
-  const loginResponseJson = loginResponse.json();
+  const loginResponseJson = await loginResponse.json();
   //Parsing JSON response body and extracting token from it
-  const token = loginResponseJson.token;
-
+  token = loginResponseJson.token;
+  console.log(token);
 
 });
 
@@ -40,20 +43,19 @@ and search for Auto suggestive dropdown options & E2E flow test
  */
 test('Web API test', async ({page}) =>
 {
+  //Adding initialization script to import the token
+  page.addInitScript(value => {
+    //Importing token
+    window.localStorage.setItem('token', value);
+  }, token);
+
   const email = "4testing@gmail.com";
   const productName = 'iphone 13 pro';
   const link = "https://rahulshettyacademy.com/client/";
-  const emailField = page.locator("#userEmail");
-  const password = page.locator("#userPassword");
-  const loginBtn = page.locator("[value='Login']");
   const products = page.locator(".card-body");
 
   await page.goto(link);
-  await emailField.fill("4testing@gmail.com");
-  await password.type("Abc!2345");
-  await loginBtn.click();
-  await page.waitForLoadState('networkidle');
-  
+ 
   const titles = await page.locator(".card-body b").allTextContents();
  
   console.log(titles);
