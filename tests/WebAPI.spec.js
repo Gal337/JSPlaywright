@@ -1,9 +1,5 @@
 const {test, expect, request} = require('@playwright/test');
 
-//Creating variable with login payload for API endpoint as Java object {(property:"value")}
-const loginPayload = {userEmail:"4testing@gmail.com",userPassword:"Abc!2345"};
-//Creating Order paylod (same as above)
-const orderPayload = {orders: [{country: "Jamaica", productOrderedId: "6262e9d9e26b7e1a10e89c04"}]};
 //Making token and orderId variable accessable to every test
 let token;
 let orderId;
