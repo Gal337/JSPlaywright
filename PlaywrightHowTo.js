@@ -31,6 +31,22 @@ request = used to access API endpoint and for Web API testing
 /*EXECUTING TESTS*/
 /*To execute tests we have to type in terminal next command: npx playwright test*/
 
+/*
+//This block of code gets executed each time before other tests
+test.beforeEach(  () =>
+{
+
+}); 
+*/
+
+/*
+//This block of code gets executed only once before all other tests
+test.beforeAll( async() =>
+{
+
+});
+*/
+
 /*If multiple tests are written inside 1 file, we can append .only to run that test only;
 Example: test.only('Browser Context Playwright test',async ({browser})=> */
 /*If we have multiple files with tests and we want to run specific file (not whole Tests folder),
@@ -56,3 +72,4 @@ Example:
     //Headless mode (true / false)
     headless: false 
 */
+

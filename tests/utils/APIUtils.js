@@ -50,6 +50,7 @@ class APIUtils
     return orderId;
     }
 
-
-  
 }
+
+module.exports = {APIUtils};
+

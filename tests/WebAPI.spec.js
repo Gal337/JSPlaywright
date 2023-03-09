@@ -1,4 +1,10 @@
 const {test, expect, request} = require('@playwright/test');
+//Making APIUtils.js file accessible
+const {APIUtils} = require('./utils/APIUtils');
+
+const loginPayload = {userEmail:"4testing@gmail.com", userPassword:"Abc!2345"};
+const orderPayload = {orders:[{country: "Cuba", productOrderedId:"6262e9d9e26b7e1a10e89c04"}]};
+
 
 //Making token and orderId variable accessable to every test
 let token;
@@ -7,16 +13,13 @@ let orderId;
 //This block of code gets executed only once before all other tests
 test.beforeAll( async() =>
 {
-  //New API context needs to be created, so the method that is in APIUtils file will run
+  //First new API context needs to be created, so the method that is in APIUtils file will run
   const apiContext = await request.newContext();
-});
-
-//This block of code gets executed each time before other tests
-test.beforeEach(  () =>
-{
+  //Making new object of API Utils
+  const apiUtils = new APIUtils(apiContext, loginPayload);
+  apiUtils.createOrder(orderPayload);
 
 });
-
 
 /* 
 For code explanation that is below, check AutomationScripts.spec.js file

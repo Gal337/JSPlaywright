@@ -48,7 +48,7 @@ for(let i = 0; i < marks.length; i++)
 console.log(sum)
 
 //Reduce function performs operation on all elements of array
-// Create new array with even numbers of scores array
+//Create new array with even numbers of scores array
 /*Value of sum should be entered last and the real logic should be before the sum value*/
 /*Value of sum = 0*/
 let total = marks.reduce((sum, mark) => sum + mark, 0)
