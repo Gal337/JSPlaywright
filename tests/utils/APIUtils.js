@@ -25,7 +25,7 @@ class APIUtils
       //Getting the JSON response body and saving it to variable
       const loginResponseJson = await loginResponse.json();
       //Parsing JSON response body and extracting token from it
-      token = loginResponseJson.token;
+      const token = loginResponseJson.token;
       console.log(token);
       //Method returns the token
       return token;
@@ -35,18 +35,24 @@ class APIUtils
     //Method for creating order
     async createOrder(orderPayload)
     {
+      let response = {};
+      //Assigning the token to response variable (JS object)
+      response.token = await this.getToken();
       //Accessing API endpoint Create Order
-  const orderResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order",
-  {
-    data: orderPayload,
-    headers:{ 
-      'Authorization': this.getToken(),
-      'Content-Type': 'application/json'
-      },
-  });
+      const orderResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order",
+      {
+        data: orderPayload,
+        headers:{ 
+          'Authorization': response.token,
+          'Content-Type': 'application/json'
+          },
+      });
     const orderResponseJson = await orderResponse.json();
     console.log(orderResponseJson)
-    orderId = orderResponseJson.orders[0];
+    const orderId = orderResponseJson.orders[0];
+    //Assigning property to JS object response
+    response.orderId = orderId;
+
     return orderId;
     }
 
