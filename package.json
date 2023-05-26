@@ -7,7 +7,7 @@
     "test": "npx playwright test tests/WebAPI.spec.js --headed",
     "regression": "npx playwright test",
     "webTests": "npx playwright test --grep @Web",
-    "apiTests": "npx playwright test --grep @API",
+    "apiTests": "npx playwright test --grep @API --reporter=line,allure-playwright",
     "FirefoxNewConfig": "npx playwright test --config playwright.config1.js --project=firefox"
   },
   "keywords": [],
