@@ -101,7 +101,7 @@ test('Saving browser storage data test', async () =>
   await page.pause();
 });
 
-test('Log in test', async () =>
+test('@API Log in test', async () =>
 {
  
   const productName = 'iphone 13 pro';
