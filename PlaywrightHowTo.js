@@ -138,4 +138,5 @@ Example: webTests
          apiTests
         FirefoxNewConfig*/
 /*And in Build Steps section, enter the command with correct name;
-Example: npm run "%Script%" */
+Example: npm run "%Script%"
+Example(Mac): npm run "$Script"*/
