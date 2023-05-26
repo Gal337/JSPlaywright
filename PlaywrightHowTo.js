@@ -120,9 +120,9 @@ Command above will install plugin for creating Allure reports*/
 /*To create results folder from which Allure reports are created type the command in terminal:
 Example: npx playwright test --grep @Web --reporter=line,allure-playwright*/
 /*To generate allure report after test execution has completed, type the command in terminal:
-Example: allure generate ./allure-results --clean*/
+Example: npx allure generate ./allure-results (--clean <- add this if u want fresh reports with no previous ones)*/ 
 /*To open the created allure report, type the command in terminal:
-Example: allure open ./allure-report*/
+Example: npx allure open ./allure-report*/
 
 /*JENKINS*/
 /*username: admin
