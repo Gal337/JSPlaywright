@@ -11,7 +11,7 @@ for(const data of dataset)
 {
 //===============ClientApp================
 //Complete E2E flow test with dynamic test title creation (for each test data, different title will be shown)
-test(`E2E flow test for ${data.productName}`, async ({page}) =>
+test(`@Web E2E flow test for ${data.productName}`, async ({page}) =>
 {
   const poManager = new POManager(page);
   
@@ -42,7 +42,7 @@ test(`E2E flow test for ${data.productName}`, async ({page}) =>
 }
 
 //Test using data fixture
-customtest(`@Web E2E flow test`, async ({page, testDataForOrder}) =>
+customtest(`E2E flow test`, async ({page, testDataForOrder}) =>
 {
   const poManager = new POManager(page);
   

@@ -1,7 +1,7 @@
 const {test, expect} = require('@playwright/test');
 
 //Static select dropdown menu, radio buttons, pop-up windows, check boxes
-test('UI Controls test',async ({page})=>
+test('@Web UI Controls test',async ({page})=>
 {
   const link = "https://rahulshettyacademy.com/loginpagePractise/";
   const userName = page.locator('#username');
