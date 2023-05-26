@@ -42,7 +42,7 @@ test(`E2E flow test for ${data.productName}`, async ({page}) =>
 }
 
 //Test using data fixture
-customtest(`E2E flow test`, async ({page, testDataForOrder}) =>
+customtest(`@Web E2E flow test`, async ({page, testDataForOrder}) =>
 {
   const poManager = new POManager(page);
   
