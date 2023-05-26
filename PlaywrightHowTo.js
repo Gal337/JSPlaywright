@@ -130,5 +130,12 @@ geslo: 4t3sting*/
 /*To run project from local machine, define the path of project under General -> Advanced */
 /*To run the tests in Jenkins, specify the name of the script;
 Example: npm run webTests*/
-
-/*Just testing*/
+/*To choose which script to run, project must be parameterized*/
+/*In Choice parameter window enter the name;
+Example: Script*/
+/*In Choices window, inside Choice parameter window, enter the name of the scrips;
+Example: webTests
+         apiTests
+        FirefoxNewConfig*/
+/*And in Build Steps section, enter the command with correct name;
+Example: npm run "%Script%" */
