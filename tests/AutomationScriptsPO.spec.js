@@ -11,7 +11,7 @@ for(const data of dataset)
 {
 //===============ClientApp================
 //Complete E2E flow test with dynamic test title creation (for each test data, different title will be shown)
-test(`@Web E2E flow test for ${data.productName}`, async ({page}) =>
+test(`E2E flow test for ${data.productName}`, async ({page}) =>
 {
   const poManager = new POManager(page);
   
