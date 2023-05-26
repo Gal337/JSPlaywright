@@ -104,13 +104,6 @@ Example:
 /*To enter debug mode add --debug at the end of command in terminal;
 Example: npx playwright test tests/UIBasicsTest.spec.js --debug*/
 
-/*To debug the tests inside VSCode, open file package.json
-and enter the below command inside "scripts":
-Example:
-"scripts": {
-    "test" : "npx playwright test tests/WebAPI.spec.js --headed"
-  },*/
-
 /*RECORDING THE TEST*/
 /*To record the test we can do it with codegen + URL;
 Example: npx playwright codegen https://www.google.com*/
