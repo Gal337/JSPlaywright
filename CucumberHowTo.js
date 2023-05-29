@@ -1,3 +1,12 @@
+/*One .feature file can hold multiple scenarios, which are treated
+as test cases. Keywords used are: Given, When, Then*/
+
+/*In one scenario, multiple keywords can be used.
+Given *i have info / data I need
+When *perform action*
+Then verify if performed action is correct*/
+
+
 /*.feature file should include the steps;
 Example: 
 Feature: Greeting
