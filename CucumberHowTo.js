@@ -1,10 +1,18 @@
 /*RUNNING THE SCENARIOS*/
-/*Inside the project features folder should be created first!
-Example: *project name*, inside the project structure feature folder is created*/
-/*Inside feature folder, .feature file should exist;
+/*Inside the project, features folder should be created first!
+Example: *project name*, inside the project structure right-click -> New folder... -> name new folder: features*/
+
+/*Inside features folder, .feature file should be created. Right-click on features folder -> New file... -> give the new file a *name*.feature;
 Example: features (folder), inside this folder new file is created called Ecommerce.feature*/
-/*Create folder with step definitions inside features folder;
+
+/*Create folder with step definitions inside features folder. Right-click on features folder -> New folder... -> name the new folder;
 Example: features (folder), inside this folder another folder is created called step_definitions*/
+
+/*Inside folder with steps, file with actual steps for .feature file needs to be created. Right-click on steps folder -> New file... -> name it steps.js;
+Example: step_definitions (folder), inside this folder new file is created called steps.js*/
+
+/*In steps.js file, code with steps for .feature file are written. To see which steps and code needs to be included, npx cucumber-js command can be run.*/
+
 /*Run scenario by typing in terminal: npx cucumber-js*/
 
 
