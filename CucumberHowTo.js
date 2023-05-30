@@ -14,6 +14,7 @@ Example: step_definitions (folder), inside this folder new file is created calle
 /*In steps.js file, code with steps for .feature file are written. To see which steps and code needs to be included, npx cucumber-js command can be run.*/
 
 /*Run scenario by typing in terminal: npx cucumber-js*/
+/*By adding --exit at the end, Cucumber will come out of the loop*/
 
 
 /*.feature file should include the steps;
