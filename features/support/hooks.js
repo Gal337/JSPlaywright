@@ -1,6 +1,6 @@
 const playwright = require('@playwright/test');
 const { POManager } = require('../../PageObjects/POManager');
-const { Before, After, BeforeStep, AfterStep } = require('@cucumber/cucumber');
+const { Before, After, BeforeStep, AfterStep, Status } = require('@cucumber/cucumber');
 
 Before(async function () {
   const browser = await playwright.chromium.launch({
