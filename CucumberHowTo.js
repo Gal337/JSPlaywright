@@ -16,6 +16,11 @@ Example: step_definitions (folder), inside this folder new file is created calle
 /*Run scenario by typing in terminal: npx cucumber-js*/
 /*By adding --exit at the end, Cucumber will come out of the loop*/
 
+/*HOOKS*/
+/*TO make the hooks for environment, new folder called support needs to be created inside
+features folder;
+Example: features (folder), inside this folder another folder is created called support*/
+
 
 /*.feature file should include the steps;
 Example: 
