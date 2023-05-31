@@ -17,9 +17,15 @@ Example: step_definitions (folder), inside this folder new file is created calle
 /*By adding --exit at the end, Cucumber will come out of the loop*/
 
 /*HOOKS*/
-/*TO make the hooks for environment, new folder called support needs to be created inside
+/*Hooks are used for setup and teardown the environment before and after each scenario;
+Example: login is usually common action that user needs to do*/
+
+/*To make the hooks for environment, new folder called support needs to be created inside
 features folder;
 Example: features (folder), inside this folder another folder is created called support*/
+
+/*Inside support folder, new file called hooks.js needs to be created;
+Example: support (folder), inside this folder new file is created called hooks.js*/
 
 
 /*.feature file should include the steps;

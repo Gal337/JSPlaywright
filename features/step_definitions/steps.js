@@ -5,13 +5,7 @@ const playwright = require('@playwright/test');
 
 Given('user logs in to Ecommerce application with {string} and {string}', {timeout: 100*1000}, async function (username, password) {
   // Write code here that turns the phrase above into concrete actions
-  const browser = await playwright.chromium.launch({
-    headless: false
-  });
-  const context = await browser.newContext();
-  const page = await context.newPage();
-  this.poManager = new POManager(page);
-  const products = page.locator(".card-body");
+  const products = this.page.locator(".card-body");
   const loginPage = this.poManager.getLoginPage();
   await loginPage.goTo();
   await loginPage.validLogin(username, password);
