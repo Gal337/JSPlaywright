@@ -44,15 +44,14 @@ Then('verify order is present in OrderHistory', async function () {
 });
 
 /*=================ErrorValidations scenario steps=================*/
-Given('user logs in to Ecommerce2 application with {string} and {string}', async function (string, string2) {
-  const userName = page.locator('#username');
-  const password = page.locator("[type='password']");
-  const signIn = page.locator("#signInBtn");
+Given('user logs in to Ecommerce2 application with {string} and {string}', async function (username, password) {
+  const userName = this.page.locator('#username');
+  const signIn = this.page.locator("#signInBtn");
   await this.page.goto("https://rahulshettyacademy.com/loginpagePractise/");
   console.log(await this.page.title());
-  await userName.type("playwright");
-  await password.type("learning");
-  await signIn.locator("#signInBtn").click();
+  await userName.type(username);
+  await this.page.locator("[type='password']").type(password);
+  await signIn.click();
 });
 
 Then('verify that error message is', async function () {
