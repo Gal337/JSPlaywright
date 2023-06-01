@@ -35,6 +35,8 @@ Example:
 Examples:
 | username | password |
 | 4testing | mypass23 | */
+/*To use parameters from Examples list, they must be specified inside <> in steps;
+Example: Given user logs in to Ecommerce2 application with "<username>" and "<password>" */
 
 /*Inside the project, features folder should be created first!
 Example: *project name*, inside the project structure right-click -> New folder... -> name new folder: features*/
