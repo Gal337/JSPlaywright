@@ -42,8 +42,9 @@ Example: step_definitions (folder), inside this folder new file is created calle
 
 /*In steps.js file, code with steps for .feature file are written. To see which steps and code needs to be included, npx cucumber-js command can be run.*/
 
-/*Run scenario by typing in terminal: npx cucumber-js*/
-/*By adding --exit at the end, Cucumber will come out of the loop*/
+/*Run ALL scenarios by typing in terminal: npx cucumber-js*/
+/*If you want to run SPECIFIC scenario then type in terminal: npx cucumber-js features/*name of the scenario*.feature --exit */
+/*By adding --exit at the end, Cucumber will come out of the loop and stop running*/
 
 /*HOOKS*/
 /*Hooks are used for setup and teardown the environment before and after each scenario;
@@ -63,8 +64,4 @@ Example: If there are 5 scenarios, code inside Before annotation code block will
 /*BeforeAll - gets executed only once before all scenarios*/
 
 /*AfterAll - gets executed only once after all scenarios are executed*/
-
-/* */
-
-/* */
 

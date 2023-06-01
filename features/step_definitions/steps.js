@@ -43,3 +43,14 @@ Then('verify order is present in OrderHistory', async function () {
   expect(this.orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy();
 });
 
+
+
+
+
+await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
+  console.log(await page.title());
+  await userName.type("playwright");
+  await password.type("learning");
+  await page.locator("#signInBtn").click();
+  console.log(await page.locator("[style*='block']").textContent());
+  await expect(page.locator("[style*='block']")).toContainText('Incorrect');
