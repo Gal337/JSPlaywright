@@ -28,6 +28,14 @@ When *perform action*
 Then verify if performed action is correct*/
 
 /*RUNNING THE SCENARIOS*/
+/*To run parameterized scenarios, Outline keyword must be used after Scenario;
+Example: Scenario Outline: Placing the order*/
+/*Below the steps, parameters must be specified;
+Example: 
+Examples:
+| username | password |
+| 4testing | mypass23 | */
+
 /*Inside the project, features folder should be created first!
 Example: *project name*, inside the project structure right-click -> New folder... -> name new folder: features*/
 
@@ -47,7 +55,7 @@ Example: step_definitions (folder), inside this folder new file is created calle
 /*By adding --exit at the end, Cucumber will come out of the loop and stop running*/
 
 /*USING @ TAGS*/
-/*To run scenarios with SPECIFIC tags, type in terminal: npx cucumber-js --tags "@Regression" --exit;
+/*To run scenarios with SPECIFIC tags (can be multiple tags), type in terminal: npx cucumber-js --tags "@Regression" --exit;
 Example:
 Feature: Ecommerce validations
 @Regression
@@ -73,6 +81,6 @@ Example: If there are 5 scenarios, code inside Before annotation code block will
 
 /*AfterAll - gets executed only once after all scenarios are executed*/
 
-/*To run hook for only specific scenario, tag must be used;
+/*To use hook for specific scenario only, tag must be used;
 Example: Before({tags: "Regression"}, async function () {*block of code*})*/
 
