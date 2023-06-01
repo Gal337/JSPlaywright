@@ -28,6 +28,8 @@ When *perform action*
 Then verify if performed action is correct*/
 
 /*RUNNING THE SCENARIOS*/
+/*Multiple scenarios that are grouped in one .feature file can be run parallelly. To do that type in terminal;
+Example: npx cucumber-js features/Ecommerce.feature --parallel 2 --exit*/
 /*To run parameterized scenarios, Outline keyword must be used after Scenario;
 Example: Scenario Outline: Placing the order*/
 /*Below the steps, parameters must be specified;
@@ -37,6 +39,8 @@ Examples:
 | 4testing | mypass23 | */
 /*To use parameters from Examples list, they must be specified inside <> in steps;
 Example: Given user logs in to Ecommerce2 application with "<username>" and "<password>" */
+/*Scenario Outline will check how many data sets are specified in Examples, and executes the scenario multiple times,
+using each data set specified*/
 
 /*Inside the project, features folder should be created first!
 Example: *project name*, inside the project structure right-click -> New folder... -> name new folder: features*/
@@ -63,7 +67,6 @@ Feature: Ecommerce validations
 @Regression
 Scenario: Placing the order */
 
-
 /*HOOKS*/
 /*Hooks are used for setup and teardown the environment before and after each scenario;
 Example: login is usually common action that user needs to do*/
@@ -86,3 +89,6 @@ Example: If there are 5 scenarios, code inside Before annotation code block will
 /*To use hook for specific scenario only, tag must be used;
 Example: Before({tags: "Regression"}, async function () {*block of code*})*/
 
+/*CREATING HTML REPORT*/
+/*To create HTML report in Cucumber, type in terminal;
+Example: npx cucumber-js features/Ecommerce.feature --exit --format html:cucumber-report.html */
