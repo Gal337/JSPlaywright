@@ -42,6 +42,9 @@ Example: Given user logs in to Ecommerce2 application with "<username>" and "<pa
 /*Scenario Outline will check how many data sets are specified in Examples, and executes the scenario multiple times,
 using each data set specified*/
 
+/*If you want to rerun the failed scenario, type in terminal;
+Example: npx cucumber-js --retry 1 */
+
 /*Inside the project, features folder should be created first!
 Example: *project name*, inside the project structure right-click -> New folder... -> name new folder: features*/
 
