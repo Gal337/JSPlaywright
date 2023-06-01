@@ -65,11 +65,14 @@ Example: features (folder), inside this folder another folder is created called 
 /*Inside support folder, new file called hooks.js needs to be created;
 Example: support (folder), inside this folder new file is created called hooks.js*/
 
-/*HOOK ANNOTATIONS*/
+/*HOOK ANNOTATIONS AND TAGS*/
 /*Before - gets executed before every scenario;
 Example: If there are 5 scenarios, code inside Before annotation code block will run 5 times before executing scenarios*/
 
 /*BeforeAll - gets executed only once before all scenarios*/
 
 /*AfterAll - gets executed only once after all scenarios are executed*/
+
+/*To run hook for only specific scenario, tag must be used;
+Example: Before({tags: "Regression"}, async function () {*block of code*})*/
 
