@@ -46,6 +46,14 @@ Example: step_definitions (folder), inside this folder new file is created calle
 /*If you want to run SPECIFIC scenario then type in terminal: npx cucumber-js features/*name of the scenario*.feature --exit */
 /*By adding --exit at the end, Cucumber will come out of the loop and stop running*/
 
+/*USING @ TAGS*/
+/*To run scenarios with SPECIFIC tags, type in terminal: npx cucumber-js --tags "@Regression" --exit;
+Example:
+Feature: Ecommerce validations
+@Regression
+Scenario: Placing the order */
+
+
 /*HOOKS*/
 /*Hooks are used for setup and teardown the environment before and after each scenario;
 Example: login is usually common action that user needs to do*/

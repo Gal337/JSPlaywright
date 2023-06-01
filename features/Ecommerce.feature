@@ -1,5 +1,5 @@
 Feature: Ecommerce validations
-
+  @Regression
   Scenario: Placing the order
     Given user logs in to Ecommerce application with "4testing@gmail.com" and "Abc!2345"
     When add "iphone 13 pro" to cart
