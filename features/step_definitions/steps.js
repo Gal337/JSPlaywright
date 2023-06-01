@@ -43,14 +43,19 @@ Then('verify order is present in OrderHistory', async function () {
   expect(this.orderId.includes(await ordersHistoryPage.getOrderId())).toBeTruthy();
 });
 
-
-
-
-
-await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
-  console.log(await page.title());
+/*=================ErrorValidations scenario steps=================*/
+Given('user logs in to Ecommerce2 application with {string} and {string}', async function (string, string2) {
+  const userName = page.locator('#username');
+  const password = page.locator("[type='password']");
+  const signIn = page.locator("#signInBtn");
+  await this.page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+  console.log(await this.page.title());
   await userName.type("playwright");
   await password.type("learning");
-  await page.locator("#signInBtn").click();
-  console.log(await page.locator("[style*='block']").textContent());
-  await expect(page.locator("[style*='block']")).toContainText('Incorrect');
+  await signIn.locator("#signInBtn").click();
+});
+
+Then('verify that error message is', async function () {
+  console.log(await this.page.locator("[style*='block']").textContent());
+  await expect(this.page.locator("[style*='block']")).toContainText('Incorrect');
+});
