@@ -54,7 +54,7 @@ Given('user logs in to Ecommerce2 application with {string} and {string}', async
   await signIn.click();
 });
 
-Then('verify that error message is', async function () {
+Then('verify that error message is visible', async function () {
   console.log(await this.page.locator("[style*='block']").textContent());
   await expect(this.page.locator("[style*='block']")).toContainText('Incorrect');
 });

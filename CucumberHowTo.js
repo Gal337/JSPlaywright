@@ -23,9 +23,9 @@ Then('I should have heard {string}', function (expectedResponse) {
 as test cases. Keywords used are: Given, When, Then*/
 
 /*In one scenario, multiple keywords can be used.
-Given *i have info / data I need
+Given *i have info / data I need*
 When *perform action*
-Then verify if performed action is correct*/
+Then *verify if performed action is correct**/
 
 /*RUNNING THE SCENARIOS*/
 /*Multiple scenarios that are grouped in one .feature file can be run parallelly. To do that type in terminal;
