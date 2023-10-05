@@ -1,3 +1,20 @@
+/*INSTALLING PLAYWRIGHT*/
+/* Pre-requisites:
+-NodeJS
+-after NodeJS is installed, you need to set the envrionment variable path in windows / mac
+-In windows you set it by going to the folder where NodeJS is installed and copy the file, open System env. variables,
+then click on Env Variables button at the bottom. In System variables section click the button New.
+For Variable name put NODE_HOME and for Variable Value just copy/paste the path of installation folder
+-Open code editor and in terminal type:
+npm init playwright (this will set up the playwright project structure)
+-Choose the language in which you want to code (JS or TS)
+-You can leave the default folder for E2E tests set to: tests
+-GitHub actions workflow can be sete to true
+-You can decide to automatically install the Playwright browsers or manually via command:
+npx playwright install
+*/
+
+
 /*CREATING CSS LOCATORS*/
 /*Locator examples are based on https://rahulshettyacademy.com/loginpagePractise/ */
 
