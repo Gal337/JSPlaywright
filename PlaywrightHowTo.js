@@ -1,5 +1,6 @@
 /*INSTALLING PLAYWRIGHT*/
 /* Pre-requisites:
+-VSCode or any other code editor
 -NodeJS
 -after NodeJS is installed, you need to set the envrionment variable path in windows / mac
 -In windows you set it by going to the folder where NodeJS is installed and copy the file, open System env. variables,
